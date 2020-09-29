@@ -1,0 +1,45 @@
+from words.py import world_list
+import random
+
+def getRandom():
+  word= random.choice(word_list)
+return word.upper()
+
+
+def  play(word):
+ word_completion = '_'* len(word)
+guessed= False
+guessed_letter =[]
+guessed_word =[]
+tries= 6
+
+print('lets play hangman')
+print("word completion")
+
+while not guessed and tries>0:
+    guess =input("ennter your gues:s").upper()
+    if len(guess)==1 and guess.isalpha():
+        if guessed in guessed_letter:
+            print('u already guess the lettr',guess)
+        elif guess not in word:
+            print(guess,"is not in the word") 
+            tries -=1
+            guessed_letter.append(guess)
+        elif len(guess)==len(guess):  
+
+         else:           
+        print("game over")
+
+
+
+def main():
+    word =getRandom()
+    print(word)
+    play(word)
+
+
+    again =input('d u want to play afain')
+
+main()
+
+#i understand upto this only so I submit it only upto this
